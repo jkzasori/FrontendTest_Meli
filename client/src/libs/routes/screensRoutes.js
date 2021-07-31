@@ -3,15 +3,20 @@ import {
   HomeSearchBarContainer,
   ResultsSearchContainer,
 } from "../../containers";
-import { Route, Switch } from "wouter";
+import { Wrapper } from "../../components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function Screens(props) {
   return (
     <div>
-      <Switch>
-        <Route path="/" component={HomeSearchBarContainer} />
-        <Route path="/search" component={ResultsSearchContainer} />
-        <Route path="/detail" component={DetailContainer} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Wrapper>
+            <Route exact path="/items" component={ResultsSearchContainer} />
+            <Route exact path="/items/:id" component={DetailContainer} />
+            <Route exact path="/" component={HomeSearchBarContainer} />
+          </Wrapper>
+        </Switch>
+      </Router>
     </div>
   );
 }
