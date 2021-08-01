@@ -45,6 +45,13 @@ router.get("/items/:id", async (req, res) => {
       .itemDescription(req.params.id)
       .then((res) => res);
     let data = formatDetailData(specificItem.data, itemDescription.data);
+
+    const categories = await meliItemsServices
+      .category(data.categoryId)
+      .then((res) => {
+        return res;
+      });
+      console.log(data.categoryId)
     res.status(200).json({
       response: {
         author,
@@ -54,6 +61,7 @@ router.get("/items/:id", async (req, res) => {
         free_shipping: data.free_shipping,
         sold_quantity: data.sold_quantity,
         description: data.description,
+        categories: categories.data.path_from_root
       },
       message: "Success! all it's working",
       error: false,

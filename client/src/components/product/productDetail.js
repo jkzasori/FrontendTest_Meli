@@ -20,9 +20,9 @@ const ProductDetail = (props) => {
       <PaymentZone>
         <h6>
           {detailItem?.condition === "new" ? "Nuevo" : detailItem?.condition} -
-          {detailItem?.sold_quantity
-            ? detailItem?.sold_quantity + " vendidos"
-            : ""}
+          {' '}{detailItem?.sold_quantity
+            ? detailItem?.sold_quantity
+            : 0} vendidos
         </h6>
         <h4>{detailItem?.item?.title}</h4>
         <h2>

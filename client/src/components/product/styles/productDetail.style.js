@@ -32,6 +32,7 @@ export const PaymentZone = styled.div`
   h4,
   h6 {
     margin-top: 0;
+    font-weight: 100;
   }
   h2 {
     font-size: 46px;
@@ -44,10 +45,12 @@ export const PaymentZone = styled.div`
   h4 {
     font-size: 24px;
     margin-bottom: 32px;
+    font-weight: bold;
   }
   h6 {
     font-size: 14px;
     margin-bottom: 16px;
+    color: ${colors.grayDarkMeli};
   }
   button {
     background-color: ${colors.blueMeli};

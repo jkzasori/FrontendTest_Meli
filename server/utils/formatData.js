@@ -52,5 +52,6 @@ export const formatDetailData = (specificItem, itemDescription) => {
     free_shipping: specificItem.shipping.free_shipping,
     sold_quantity: specificItem.sold_quantity,
     description: itemDescription.plain_text,
+    categoryId: specificItem.category_id
   };
 };

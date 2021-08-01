@@ -21,9 +21,9 @@ export const itemDescription = async (id) => {
     .catch((error) => error);
 };
 
-export const currency = async (id) => {
+export const category = async (id) => {
   return axios
-    .get(`https://api.mercadolibre.com/currencies/${id}`)
+    .get(`https://api.mercadolibre.com/categories/${id}`)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -31,7 +31,7 @@ const service = {
   itemSearch,
   specificItem,
   itemDescription,
-  currency,
+  category,
 };
 
 export default service;
