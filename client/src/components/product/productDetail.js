@@ -5,7 +5,6 @@ import {
 } from "./styles/productDetail.style";
 const ProductDetail = (props) => {
   const { detailItem } = props;
-  console.log(detailItem);
   return (
     <ContainerProductDetail>
       <Description>

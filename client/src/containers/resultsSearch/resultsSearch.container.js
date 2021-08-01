@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import { itemsServices } from "../../libs/services/";
 import { useLocation } from "react-router-dom";
-import { CardItemList, ContainerBigCard, LoadingMeli } from "../../components";
+import {ContainerResults} from './style'
+import {
+  CardItemList,
+  ContainerBigCard,
+  LoadingMeli,
+  BreadCrumbsMeli,
+} from "../../components";
 import { Helmet } from "react-helmet";
 
 const ResultsSearchContainer = () => {
   const [items, setItems] = useState([]);
+  const [breadCrumbs, setBreadCrumbs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   function useQuery() {
@@ -20,7 +27,8 @@ const ResultsSearchContainer = () => {
       setLoading(false);
       if (res.status === 200) {
         if (!res.data.error) {
-          setItems(res?.data?.response.items);
+          setItems(res?.data?.response?.items);
+          setBreadCrumbs(res?.data?.response?.breadCrumbs);
         }
       }
     });
@@ -42,7 +50,10 @@ const ResultsSearchContainer = () => {
       {loading ? (
         <LoadingMeli />
       ) : items?.length > 0 ? (
-        <ContainerBigCard>{listItems(items)}</ContainerBigCard>
+        <ContainerResults>
+          <BreadCrumbsMeli categories={breadCrumbs.slice(0, 4)} />
+          <ContainerBigCard>{listItems(items)}</ContainerBigCard>
+        </ContainerResults>
       ) : (
         <h6>Nunca pare de buscar</h6>
       )}
