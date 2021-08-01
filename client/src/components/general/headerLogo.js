@@ -1,7 +1,7 @@
 import { HeaderLogoContainer } from "./styles/headerLogo.style";
 import logo from "../../assets/Logo_ML.png";
 import { SearchBar } from "../";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 const HeaderLogo = (props) => {
   const { children } = props;
@@ -10,7 +10,7 @@ const HeaderLogo = (props) => {
       <HeaderLogoContainer>
         <div>
           <Link to="/">
-            <img src={logo} alt="algo" />
+            <img src={logo} alt="mercado libre" />
           </Link>
 
           <SearchBar></SearchBar>

@@ -20,7 +20,7 @@ app.use(hpp());
 app.use(cors());
 app.use("/api/", apiRouter)
 app.get("", (req, res) => {
-  res.send("hola viejo");
+  res.send("Working");
 });
 
 app.listen(PORT, () => {

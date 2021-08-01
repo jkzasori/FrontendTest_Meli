@@ -9,7 +9,7 @@ export const itemSearch = async (query) => {
 
 export const specificItem = async (id) => {
   return meliHTTP
-    .get(`/api/items/:${id}`)
+    .get(`/api/items/${id}`)
     .then((resp) => resp)
     .catch((error) => error);
 };

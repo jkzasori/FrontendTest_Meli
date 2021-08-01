@@ -11,6 +11,7 @@ export const ContainerInput = styled.div `
     background-color: ${colors.grayLightMeli};
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    cursor: pointer;
   }
   input {
     height: 100%;

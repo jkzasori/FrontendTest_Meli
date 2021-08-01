@@ -15,6 +15,8 @@ router.get("/items", async (req, res) => {
       });
 
     let data = formatItemsData(responseExternal.data, 4);
+
+
     res.status(200).json({
       response: {
         author,
