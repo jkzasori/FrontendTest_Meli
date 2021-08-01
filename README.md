@@ -1,7 +1,7 @@
 ## Como correr el aplicativo
 
 Nota: La plicación está hecha con node 12, express para el manejo de el backend y la generación de los nuevos endpoints y react para la interfaz gráfica y consumir los servicios.
-Primero dirijase a la carpeta server e instale las dependecias con
+Primero dirijase a la `carpeta server` e instale las dependecias con
 
 ### `npm install o yarn install`
 
@@ -9,7 +9,7 @@ Ahora corra el backend con express con el siguiente comando
 
 ### `npm start o yarn start`
 
-Despues dirijase a la carpeta client
+Despues dirijase a la `carpeta client`
 
 Aquí deberá crear un archivo
 
