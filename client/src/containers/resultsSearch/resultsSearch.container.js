@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { itemsServices } from "../../libs/services/";
 import { useLocation } from "react-router-dom";
 import { CardItemList, ContainerBigCard, LoadingMeli } from "../../components";
+import { Helmet } from "react-helmet";
+
 const ResultsSearchContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,6 +31,14 @@ const ResultsSearchContainer = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mercado Libre: Encuentre lo que desea - {query}</title>
+        <meta
+          name="description"
+          content="Mercado Libre, el sitio dónde encuentras todo lo que necesitas - Paga en cuotas - Envíos a todo el país."
+        />
+      </Helmet>
       {loading ? (
         <LoadingMeli />
       ) : items?.length > 0 ? (
