@@ -34,7 +34,7 @@ const DetailContainer = (props) => {
       {Object.keys(detailItem).length > 0 ? (
         <>
           <Helmet>
-            <title>Mercado Libre: {detailItem?.title}</title>
+            <title>Mercado Libre: </title>
           </Helmet>
           <BreadCrumbsMeli categories={detailItem?.categories} />
           <ContainerBigCard>

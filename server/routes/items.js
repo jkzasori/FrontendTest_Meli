@@ -41,17 +41,16 @@ router.get("/items/:id", async (req, res) => {
       .then((res) => {
         return res;
       });
+      
     const itemDescription = await meliItemsServices
       .itemDescription(req.params.id)
       .then((res) => res);
     let data = formatDetailData(specificItem.data, itemDescription.data);
-
     const categories = await meliItemsServices
       .category(data.categoryId)
       .then((res) => {
         return res;
       });
-      console.log(data.categoryId)
     res.status(200).json({
       response: {
         author,
