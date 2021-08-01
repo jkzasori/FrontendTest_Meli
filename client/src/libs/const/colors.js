@@ -5,6 +5,7 @@ const colors = {
   grayMeli: "#999999",
   grayLight: "#EEEEEE",
   blueMeli: "#3483FA",
+  darkBlueMeli: "#2968c8",
 };
 
 export default colors;

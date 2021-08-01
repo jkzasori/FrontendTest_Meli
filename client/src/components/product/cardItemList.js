@@ -23,7 +23,10 @@ const CardItemList = (props) => {
           <ImgItem src={item?.picture} alt={item.title} />
           <ContainerGroupText>
             <h2>
-              {item?.price?.currency} {item?.price?.amount}{" "}
+              $  {new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: item?.price?.currency,
+          }).format(item?.price?.amount)}
               {item?.free_shipping ? (
                 <img src={imgShipping} alt="free shipping" />
               ) : (
